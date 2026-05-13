@@ -81,7 +81,7 @@ export default function AdminPage() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === "1234") {
+    if (password === "Musti4545*") {
       setAuthenticated(true);
     } else {
       alert("Hatalı şifre!");
