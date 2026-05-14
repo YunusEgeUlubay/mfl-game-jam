@@ -21,12 +21,19 @@ export default function AdminPage() {
   const [fetchError, setFetchError] = useState<string | null>(null);
   const router = useRouter();
 
-  useEffect(() => {
-    if (authenticated) {
-      if (adminTab === "games") fetchGames();
-      else fetchUsers();
-    }
-  }, [authenticated, adminTab]);
+useEffect(() => {
+  if (!authenticated) return;
+
+  if (adminTab === "games") {
+    fetchGames();
+  }
+
+  if (adminTab === "users") {
+    fetchUsers();
+  }
+}, [authenticated, adminTab]);
+  console.log("ADMIN TAB:", adminTab);
+console.log("USERS:", users);
 
   const fetchGames = async () => {
     setLoading(true);
