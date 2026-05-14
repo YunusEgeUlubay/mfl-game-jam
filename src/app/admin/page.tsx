@@ -215,7 +215,10 @@ console.log("USERS:", users);
             <Gamepad2 className="w-4 h-4" /> Oyunlar
           </button>
           <button
-            onClick={() => setAdminTab("users")}
+            onClick={() => {
+  setAdminTab("users");
+  fetchUsers();
+}}
             className={clsx(
               "flex items-center gap-2 px-6 py-2.5 rounded-md text-sm font-medium transition-all flex-1 md:flex-none justify-center",
               adminTab === "users" ? "bg-secondary/20 text-secondary shadow-sm border border-secondary/20" : "text-gray-400 hover:text-white"
